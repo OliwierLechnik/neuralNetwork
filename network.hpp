@@ -25,12 +25,10 @@ public:
     NeuralNetwork (string Path);
     void loadFromFile (string Path);
 /*
-    
     This functions will load the network layout and its values from the given file.
     If the file is invalid, an error will be printed to std::cerr and further program execution will be aborted.
 
     @Param Path; Path to file containing layout and content of neural network.
-
 */
 
     NeuralNetwork (vector <int> layerSize);
@@ -41,15 +39,24 @@ public:
     4 neurons in the output layer, and 2 12-neuron hidden layers.
 
     @Param LayerSize; size and amount of layers to create
+*/
 
+    void saveToFile (string path);
+/*
+    will save networks layout and content of layers to file
+
+    @param path; name of save file
 */
 
     NeuralNetwork permutate(int seed, float chance, float power);
 /*
-    @param seed; 
-    @param chance;
-    @param power;
-    @return
+    The network will be tweaked by the given percentage with the given power.
+    Each neuron has a {chance} to be permutated with +- <0;{power}>.
+
+    @param seed; seeded randomness object. 
+    @param chance; percentage of neurons to permutate.
+    @param power; maximum permutation value.
+    @return mutated network;
 */
 
 
