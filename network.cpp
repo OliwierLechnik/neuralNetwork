@@ -19,9 +19,18 @@ NeuralNetwork::NeuralNetwork (
 void NeuralNetwork::createNew (
         vector <int> layerSize
     ) {
-        for(int i = 0; i < layerSize.size(); i++){
-            std::cout << i << " ";
+        this->layers = layerSize;
+        for(int i = 0; i < layerSize.size()-1; i++){
+            vector <float> v(layers[i],0);
+            vector <vector <float>> temp(layers[i+1],v);
+            wTensor.push_back(temp);
         }
+
+}
+
+vector <float> NeuralNetwork::eval(vector <float> input){
+    
+    return {};
 }
 
 void NeuralNetwork::loadFromFile (

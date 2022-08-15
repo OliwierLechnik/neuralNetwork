@@ -3,9 +3,9 @@
 #include "network.hpp"
 
 int main(){
-    using std::vector;
+    using std::vector, std::cout;
 
-    NeuralNetwork network({4,6,2});
+    NeuralNetwork nn(vector{4,6,2});
 
     return 0;
 }

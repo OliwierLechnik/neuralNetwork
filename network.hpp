@@ -7,11 +7,13 @@
 #include <fstream>
 #include <iostream>
 
+#include "utility.hpp"
+
 using std::vector, std::string;
 
 class NeuralNetwork {
 private:
-
+    vector <int> layers;
     vector <vector <vector <float>>> wTensor;
     vector <vector <float>> bMatrix;
 
@@ -39,6 +41,12 @@ public:
     4 neurons in the output layer, and 2 12-neuron hidden layers.
 
     @Param LayerSize; size and amount of layers to create
+*/
+    vector <float> eval(vector <float> input);
+/*
+    will calculate output based on input
+
+    @return
 */
 
     void saveToFile (string path);
